@@ -26,7 +26,13 @@ const router = new VueRouter({
     routes:[
         {
             path:'/',
-            component:require('./components/pager/index.vue')
+            name:'index',
+            component:require('./components/pager/index')
+        },
+        {
+            path:'/category/:id',
+            name:'category',
+            component:require('./components/pager/category')
         }
     ]
 })
