@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "96098e473b028cdb2529580554a1ae3e",
+    "content-hash": "dff6d5e9c7a73b847136136ca300fa21",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -426,6 +426,42 @@
                 "psysh"
             ],
             "time": "2017-06-01T16:31:26+00:00"
+        },
+        {
+            "name": "laravelchen/laravel-editormd",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelChen/laravel-editormd.git",
+                "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/LaravelChen/laravel-editormd/5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a.zip",
+                "reference": "5c1287d58ff3ef5ee74b834ec4bdfe6f7371291a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaravelChen\\Editormd\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "LaravelChen",
+                    "email": "848407695@qq.com"
+                }
+            ],
+            "description": "laravel-editor-mb",
+            "time": "2017-03-25T04:20:03+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2197,22 +2233,22 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/8331b5efe816ae05461b7ca1e721c01b46bafb3e.zip",
-                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "url": "https://files.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/46f7e8bb075036c92695b15a1ddb6971c751e585.zip",
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5",
                 "phpdocumentor/reflection-common": "^1.0@dev",
-                "phpdocumentor/type-resolver": "^0.2.0",
+                "phpdocumentor/type-resolver": "^0.4.0",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
@@ -2238,24 +2274,24 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30T07:12:33+00:00"
+            "time": "2017-07-15T11:38:20+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "0.2.1",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb"
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/phpDocumentor/TypeResolver/e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb.zip",
-                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
+                "url": "https://files.phpcomposer.com/files/phpDocumentor/TypeResolver/9c977708995954784726e25d0cd1dddf4e65b0f7.zip",
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5",
+                "php": "^5.5 || ^7.0",
                 "phpdocumentor/reflection-common": "^1.0"
             },
             "require-dev": {
@@ -2285,7 +2321,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-11-25T06:54:22+00:00"
+            "time": "2017-07-14T14:27:02+00:00"
         },
         {
             "name": "phpspec/prophecy",

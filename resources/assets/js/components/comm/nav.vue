@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -17,10 +17,17 @@
                 <ul class="nav navbar-nav">
                     <li v-for="menu in menus" :class="{'active':menu.active}" v-on:click="change(menu)"><a href="javascript:;">{{menu.name}}</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">登录</a></li>
-                    <li><a href="#">注册</a></li>
-                </ul>
+
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li><a href="#">登录</a></li>-->
+                    <!--<li><a href="#">注册</a></li>-->
+                <!--</ul>-->
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -32,43 +39,37 @@
         name: 'nav',
         data () {
             return {
-                brand: 'Blog',
-                menus:[
-                    {
-                        id:1,
-                        name:'html',
-                        active:false,
-                    },
-                    {
-                        id:2,
-                        name:'css',
-                        active:false
-                    },
-                    {
-                        id:3,
-                        name:'javascript',
-                        active:false
-                    }
-                ]
+                brand:'Blog',
+                menus:''
             }
         },
         watch: {
             '$route' (to, from) {
-                console.log(this.$route.params.id);
+//                console.log(to)
+//                console.log(from)
+//                console.log(this.$route.params.id);
             }
         },
         created:function(){
-            var id = this.$route.params.id;
-            if (undefined !== id) {
-                for (var i = 0; i < this.menus.length; i++) {
-                    if (id == this.menus[i].id) {
-                        console.log(id)
-                        this.menus[i].active = true
-                    } else {
-                        this.menus[i].active = false
+            var _this = this
+            this.$http.get('/api/menu').then(function (response) {
+                _this.menus = response.data.result
+                var id = this.$route.params.id;
+                if (undefined !== id) {
+                    for (var i = 0; i < _this.menus.length; i++) {
+                        if (id == _this.menus[i].id) {
+                            console.log(id)
+                            _this.menus[i].active = true
+                        } else {
+                            _this.menus[i].active = false
+                        }
                     }
                 }
-            }
+            })
+            .catch(function (error) {
+
+            });
+
         },
         methods:{
             change:function(evt){
@@ -80,15 +81,13 @@
                         _this.menus[i].active = false
                     }
                 }
-                _this.$router.push({name:'category', params:{id:evt.id}})
+                if (evt.type == 'module') {
+                    _this.$router.push({name:evt.path})
+                } else {
+                    _this.$router.push({name:evt.path, params:{id:evt.param}})
+                }
+
             }
         }
     }
 </script>
-
-<style>
-    .navbar{
-        margin-bottom: 2px;
-    }
-
-</style>

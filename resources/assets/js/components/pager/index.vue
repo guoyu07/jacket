@@ -3,44 +3,166 @@
         <my-nav></my-nav>
         <div class="content">
             <div class="container">
+                <ol class="breadcrumb" style="margin-top: 70px">
+                    <i class="fa fa-map-marker"></i>&nbsp;&nbsp;
+                    <li class="active">首页</li>
+                </ol>
                 <div class="col-md-8 col-lg-8 col-xs-12">
-                    <div class="article-item">
-                        <div class="article-box row">
-                            <div class="article-cover col-md-4 no-padding">
-                                <a href="">
-                                    <img src="https://static.phpsong.com/wp-content/uploads/2017/05/2017052500553143412-220x150.jpg" alt="">
-                                </a>
+                    <div class="article-item" v-for="list in lists">
+                        <div class="article-box box-shadow row">
+                            <div class="article-title col-md-12">
+                                <h2>{{list.title}}</h2>
+                                <p class="article-info">
+                                    <span class="time"><i class="fa fa-calendar"></i> {{list.created_at}}</span>
+                                    <span class="cate"><i class="fa fa-folder"></i> {{list.category.name}}</span>
+                                    <span class="user"><i class="fa fa-user"></i> {{list.user.name}}</span>
+                                </p>
                             </div>
-                            <div class="article-content col-md-8 no-padding">
-                                <h2>纬二路情况为其温控器吴克羣吴克羣围殴千万人</h2>
-                                <p>纬二路情况为其温控器吴克羣吴克羣围殴千万人纬二路情况为其温控器吴克羣吴克羣围殴千万人纬二路情况为其温控器吴克羣吴克羣围殴千万人</p>
+                            <div class="article-desc col-md-12">
+                                <div class="article-cover col-md-4 col-xs-12">
+                                    <a href="">
+                                        <img class="img-responsive" :src="list.cover" alt="">
+                                    </a>
+                                </div>
+                                <div class="article-content col-md-8 col-xs-12">
+                                    {{list.desc}}
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 article-footer">
+                                <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
+                                <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
+                                <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
+                                <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
+                                <span class="label label-success" style="float: right;cursor: pointer" @click="change(list.id)">查看详情 ></span>
                             </div>
                         </div>
                     </div>
+
+                    <div class="loads">
+                        <nav aria-label="...">
+                            <ul class="pager">
+                                <li v-if="pages && current > 1" @click="prev" class="previous"><a href="javascript:;"><span aria-hidden="true">&larr;</span> Older</a></li>
+                                <li v-if="pages && current < pages" @click="next"  class="next"><a href="javascript:;">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
+                <my-sidebar></my-sidebar>
             </div>
         </div>
-
+        <my-footer></my-footer>
     </div>
 </template>
 <script>
     import myNav from './../comm/nav'
+    import myFooter from './../comm/footer'
+    import mySidebar from './../comm/sidebar'
     export default{
         name:'index',
-        components:{myNav},
+        components:{myNav, myFooter,mySidebar},
+        data(){
+            return {
+                lists:[],
+                current:1,
+                pages:null
+            }
+        },
+        mounted:function () {
+            var _this = this
+            this.$http.get('/api/lists').then(res => {
+                console.log(res)
+                _this.current = res.data.result.current_page
+                _this.pages = res.data.result.last_page
+                _this.lists = res.data.result.data
+            }, error => {
+
+            })
+        },
+        methods:{
+            change:function (id) {
+                console.log(id)
+                this.$router.push({name:'show', params:{id:id}})
+            },
+            prev:function (event) {
+                var page = --this.current
+                var _this = this
+                this.$http.get('/api/lists', {
+                    params:{
+                        page:page
+                    }
+                }).then(res => {
+                    console.log(res)
+                    _this.current = res.data.result.current_page
+                    _this.pages = res.data.result.last_page
+                    _this.lists = res.data.result.data
+                }, error => {
+
+                })
+            },
+            next:function (event) {
+                var page = ++this.current
+                var _this = this
+                this.$http.get('/api/lists', {
+                    params:{
+                        page:page
+                    }
+                }).then(res => {
+                    console.log(res)
+                    _this.current = res.data.result.current_page
+                    _this.pages = res.data.result.last_page
+                    _this.lists = res.data.result.data
+                }, error => {
+
+                })
+            }
+        }
     }
 </script>
 
 <style>
+    body{
+        background: #eee;
+    }
+
+    .list-group-item{
+        border: none;
+        cursor: pointer;
+    }
+
     .article-item{
-        margin-bottom: 30px;
-        background: #abcdef;
-        border-radius: 5px;
+        padding: 0;
+        margin-bottom: 10px;
+        background: #ffffff;
+        border-radius: 3px;
+        border: 2px solid #ffffff;
+    }
+    .article-item:hover{
+        border: 2px solid #bce8f1;
     }
     .article-box {
-        padding: 10px;
+        padding: 10px 10px 15px 15px;
+
     }
-    .article-cover img {
-        width:100%;
+    .article-title h2{
+        margin-top:0;
+        cursor: pointer;
+    }
+    .article-title h2:hover{
+        text-decoration: underline;
+    }
+    .article-title span{
+        margin-right: 30px;
+    }
+    .article-cover,.article-content{
+        margin-bottom: 10px;
+        padding-left: 1px;
+    }
+    .article-footer{
+        clear: both;
+    }
+    .loads{
+        margin-bottom: 30px;
+        margin-top: 30px;
     }
 </style>
