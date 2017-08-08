@@ -10,7 +10,9 @@ namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Link;
 use App\Models\Menus;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -45,6 +47,65 @@ class ApiController extends Controller
         return response()->json([
             'status' => true,
             'result' => $article,
+        ]);
+    }
+
+    public function recommend()
+    {
+        $articles = Article::where('is_recommend', 1)
+            ->orderBy('id', 'desc')
+            ->select(['title','id', 'votes'])
+            ->take(5)
+            ->get();
+        return response()->json([
+            'status' => true,
+            'result' => $articles,
+        ]);
+    }
+
+    public function popularity()
+    {
+        $articles = Article::orderBy('votes', 'desc')
+            ->select(['title','id', 'votes'])
+            ->take(5)
+            ->get();
+        return response()->json([
+            'status' => true,
+            'result' => $articles,
+        ]);
+    }
+
+    public function tags()
+    {
+        $tags = Tag::with('articles')->get();
+        $tags->each(function ($item) {
+            $item->count = $item->articles->count();
+        });
+        return response()->json([
+            'status' => true,
+            'result' => $tags,
+        ]);
+
+    }
+
+    public function links()
+    {
+        $links = Link::all();
+        return response()->json([
+            'status' => true,
+            'result' => $links,
+        ]);
+    }
+
+    public function vote()
+    {
+        $id = request()->get('id');
+        $article = Article::find($id);
+        $article->votes += 1;
+        $article->save();
+        return response()->json([
+            'status' => true,
+            'result' => 'success',
         ]);
     }
 }

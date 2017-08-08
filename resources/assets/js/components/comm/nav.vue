@@ -43,13 +43,6 @@
                 menus:''
             }
         },
-        watch: {
-            '$route' (to, from) {
-//                console.log(to)
-//                console.log(from)
-//                console.log(this.$route.params.id);
-            }
-        },
         created:function(){
             var _this = this
             this.$http.get('/api/menu').then(function (response) {

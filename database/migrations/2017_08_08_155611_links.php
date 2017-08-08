@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ArticleTag extends Migration
+class Links extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class ArticleTag extends Migration
      */
     public function up()
     {
-        Schema::create('article_tag', function (Blueprint $table) {
-            $table->unsignedInteger('article_id');
-            $table->unsignedInteger('tag_id');
+        Schema::create('links', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 60);
+            $table->string('url', 255);
+            $table->timestamps();
             $table->engine = 'innodb';
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';

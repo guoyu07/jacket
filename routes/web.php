@@ -75,7 +75,12 @@ Route::group([
     'namespace' => 'Blog',
     'prefix'    => 'api',
 ], function () {
-    Route::get('menu',  'ApiController@menu');
-    Route::get('lists', 'ApiController@lists');
-    Route::get('show',  'ApiController@show');
+    Route::get('menu',       'ApiController@menu');
+    Route::get('lists',      'ApiController@lists');
+    Route::get('show',       'ApiController@show');
+    Route::get('recommend',  'ApiController@recommend');
+    Route::get('popularity', 'ApiController@popularity');
+    Route::get('tags',       'ApiController@tags');
+    Route::get('links',      'ApiController@links');
+    Route::post('vote',      'ApiController@vote');
 });

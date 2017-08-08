@@ -16,7 +16,7 @@ class Menus extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 60);
-            $table->unsignedTinyInteger('type');
+            $table->string('type', 60);
             $table->string('path', 60);
             $table->unsignedInteger('param');
             $table->boolean('active');

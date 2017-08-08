@@ -6,38 +6,14 @@
             </div>
             <div class="panel-body">
                 <div class="list-group" style="margin-bottom: 0">
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
+                    <router-link class="list-group-item" v-for="item in recommend" :to="{name:'show', params:{id:item.id}}">
+                        <span style="float: right;" class="badge">{{item.votes}}</span>
                         <p style="margin: 0">
                             <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
+                            {{item.title}}　
                         </p>
                         <span class="clearfix"></span>
-                    </a>
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
-                        <p style="margin: 0">
-                            <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
-                        </p>
-                        <span class="clearfix"></span>
-                    </a>
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
-                        <p style="margin: 0">
-                            <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
-                        </p>
-                        <span class="clearfix"></span>
-                    </a>
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
-                        <p style="margin: 0">
-                            <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
-                        </p>
-                        <span class="clearfix"></span>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -122,7 +98,44 @@
 
 <script>
     export default{
-        name: 'sidebar'
+        name: 'sidebar',
+        data(){
+            return{
+                recommend:[],
+                popularity:[],
+                tags:[],
+                links:[]
+            }
+        },
+        created:function(){
+            let _this = this;
+            this.$http.get('/api/recommend').then(res => {
+                _this.recommend = res.data.result
+            }, error => {
+
+            })
+
+            this.$http.get('/api/popularity').then(res => {
+                _this.popularity = res.data.result
+            }, error => {
+
+            })
+
+            this.$http.get('/api/tags').then(res => {
+                _this.tags = res.data.result
+            }, error => {
+
+            })
+
+            this.$http.get('/api/links').then(res => {
+                _this.links = res.data.result
+            }, error => {
+
+            })
+        },
+        methods:{
+
+        }
     }
 </script>
 

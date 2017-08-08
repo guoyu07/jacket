@@ -20,6 +20,7 @@ class Artilce extends Migration
             $table->string('desc',255);
             $table->string('cover', 128);
             $table->unsignedInteger('category_id');
+            $table->unsignedTinyInteger('is_recommend')->default(0);
             $table->text('content');
             $table->text('markdown_content');
             $table->unsignedInteger('votes');
