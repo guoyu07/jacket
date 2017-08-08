@@ -33,6 +33,9 @@ Route::group([
     ], function () {
         Route::get('logout', 'AuthController@logout');
         Route::get('index',  'HomeController@index');
+        Route::get('',  function () {
+            return redirect('admin/index');
+        });
 
         Route::group([
             'prefix' => 'article',

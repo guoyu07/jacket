@@ -21,7 +21,7 @@
             <hr style="border-top: 1px solid #bce8f1">
             <p class="article-footer">
                 <span class="btn btn-default btn-xs" v-for="tag in article.tags"><i class="fa fa-tag"></i> {{tag.name}}</span>
-                <span class="btn btn-success btn-sm" style="float: right" @click="vote">
+                <span class="btn btn-success btn-sm" style="float: right" @click="vote(article)">
                     <i class="fa fa-thumbs-up"></i> {{article.votes}}
                 </span>
             </p>
@@ -30,12 +30,14 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     上一篇：&nbsp;&nbsp;&nbsp;
-                    <a>ewrwerwerwerwewerwer</a>
+                    <router-link v-if="prev" :to="{name:'show',params:{id:prev.id}}">{{prev.title}}</router-link>
+                    <a href="javascript:;" v-else>没有了</a>
                 </li>
 
                 <li class="list-group-item">
                     下一篇：&nbsp;&nbsp;&nbsp;
-                    <a>ewrwerwerwerwewerwer</a>
+                    <router-link v-if="next" :to="{name:'show',params:{id:next.id}}">{{next.title}}</router-link>
+                    <a href="javascript:;" v-else>没有了</a>
                 </li>
             </ul>
         </div>
@@ -51,27 +53,45 @@
         components:{myNav, myFooter, mySidebar},
         data(){
             return {
-                article:null,
-                id:this.$route.params.id,
+                article:'',
+                prev:'',
+                next:'',
+            }
+        },
+        watch: {
+            '$route' (to, from) {
+                this.getList()
             }
         },
         created:function () {
-            var _this = this
-            this.$http.get('/api/show', {
-                params:{
-                    id:_this.id
-                }
-            }).then(res => {
-                console.log(res)
-                _this.article = res.data.result
-                console.log(_this.article)
-            }, error => {
-
-            })
+            this.getList()
         },
         methods: {
-            vote:function(){
-                console.log(1)
+            vote:function(article){
+                this.$http.post('/api/vote', {
+                    id:article.id
+                }).then(res => {
+                    if (res.status) {
+                        article.votes += 1;
+                    }
+
+                }, error => {
+
+                })
+            },
+            getList:function () {
+                let _this = this
+                this.$http.get('/api/show', {
+                    params:{
+                        id:_this.$route.params.id
+                    }
+                }).then(res => {
+                    _this.article = res.data.result.article;
+                    _this.prev = res.data.result.prev;
+                    _this.next = res.data.result.next;
+                }, error => {
+
+                })
             }
         }
     }

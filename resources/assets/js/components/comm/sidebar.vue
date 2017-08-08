@@ -23,38 +23,14 @@
             </div>
             <div class="panel-body">
                 <div class="list-group" style="margin-bottom: 0">
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
+                    <router-link class="list-group-item" v-for="item in popularity" :to="{name:'show',params:{id:item.id}}">
+                        <span style="float: right;" class="badge">{{item.votes}}</span>
                         <p style="margin: 0">
                             <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
+                            {{item.title}}
                         </p>
                         <span class="clearfix"></span>
-                    </a>
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
-                        <p style="margin: 0">
-                            <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
-                        </p>
-                        <span class="clearfix"></span>
-                    </a>
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
-                        <p style="margin: 0">
-                            <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
-                        </p>
-                        <span class="clearfix"></span>
-                    </a>
-                    <a class="list-group-item" href=" ">
-                        <span style="float: right;" class="badge">1212</span>
-                        <p style="margin: 0">
-                            <span class="fa fa-book"></span>
-                            持续请学院君喝杯咖啡吧；感谢辛苦的付出；　
-                        </p>
-                        <span class="clearfix"></span>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -63,11 +39,7 @@
                 <i class="fa fa-tags"></i> 标签
             </div>
             <div class="panel-body">
-                <span class="btn btn-info tag">php <span class="badge">20</span></span>
-                <span class="btn btn-info tag">php <span class="badge">20</span></span>
-                <span class="btn btn-info tag">php <span class="badge">20</span></span>
-                <span class="btn btn-info tag">php <span class="badge">20</span></span>
-                <span class="btn btn-info tag">php <span class="badge">20</span></span>
+                <span class="btn btn-info tag" v-for="tag in tags">{{tag.name}} <span class="badge">{{tag.count}}</span></span>
             </div>
         </div>
         <div class="panel panel-info friend-link">
@@ -76,19 +48,9 @@
             </div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    <li class="list-group-item" v-for="link in links">
                         <i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;
-                        <a>ewrwerwerwerwewerwer</a>
-                    </li>
-
-                    <li class="list-group-item">
-                        <i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;
-                        <a>ewrwerwerwerwewerwer</a>
-                    </li>
-
-                    <li class="list-group-item">
-                        <i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;
-                        <a>ewrwerwerwerwewerwer</a>
+                        <a target="_blank" :href="link.url">{{link.name}}</a>
                     </li>
                 </ul>
             </div>

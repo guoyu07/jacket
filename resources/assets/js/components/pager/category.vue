@@ -61,35 +61,11 @@
         },
         watch: {
             '$route' (to, from) {
-                var _this = this
-                this.$http.get('/api/lists', {
-                    params:{
-                        category_id:_this.$route.params.id
-                    }
-                }).then(res => {
-                    console.log(res)
-                    _this.current = res.data.result.current_page
-                    _this.pages = res.data.result.last_page
-                    _this.lists = res.data.result.data
-                }, error => {
-
-                })
+                this.getList()
             }
         },
         mounted:function () {
-            var _this = this
-            this.$http.get('/api/lists', {
-                params:{
-                    category_id:_this.$route.params.id
-                }
-            }).then(res => {
-                console.log(res)
-                _this.current = res.data.result.current_page
-                _this.pages = res.data.result.last_page
-                _this.lists = res.data.result.data
-            }, error => {
-
-            })
+            this.getList()
         },
 
         methods:{
@@ -122,6 +98,20 @@
                     }
                 }).then(res => {
                     console.log(res)
+                    _this.current = res.data.result.current_page
+                    _this.pages = res.data.result.last_page
+                    _this.lists = res.data.result.data
+                }, error => {
+
+                })
+            },
+            getList:function () {
+                var _this = this
+                this.$http.get('/api/lists', {
+                    params:{
+                        category_id:_this.$route.params.id
+                    }
+                }).then(res => {
                     _this.current = res.data.result.current_page
                     _this.pages = res.data.result.last_page
                     _this.lists = res.data.result.data

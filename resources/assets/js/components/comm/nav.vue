@@ -22,12 +22,12 @@
                     <!--<li><a href="#">登录</a></li>-->
                     <!--<li><a href="#">注册</a></li>-->
                 <!--</ul>-->
-                <form class="navbar-form navbar-right">
+                <div class="navbar-form navbar-right">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

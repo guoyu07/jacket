@@ -44,9 +44,25 @@ class ApiController extends Controller
     {
         $id = $request->get('id');
         $article = Article::with(['category', 'user', 'tags'])->find($id);
+        $prev = Article::where('id', '<', $id)->max('id');
+        $next = Article::where('id', '>', $id)->min('id');
+        if ($prev) {
+            $prev_article = Article::findOrFail($prev);
+        } else {
+            $prev_article = '';
+        }
+        if ($next) {
+            $next_article = Article::findOrFail($next);
+        } else {
+            $next_article = '';
+        }
         return response()->json([
             'status' => true,
-            'result' => $article,
+            'result' => [
+                'article' => $article,
+                'prev'    => $prev_article,
+                'next'    => $next_article,
+            ],
         ]);
     }
 
