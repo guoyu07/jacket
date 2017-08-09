@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\Link;
 use App\Models\Menus;
 use App\Models\Tag;
@@ -32,8 +33,9 @@ class ApiController extends Controller
         $builder = Article::with(['category', 'user', 'tags']);
         if ($category_id) {
             $builder = $builder->where('category_id', $category_id);
+            $category = Category::find($category_id);
         }
-        $articles = $builder->paginate(2);
+        $articles = $builder->paginate(10);
         return response()->json([
             'status' => true,
             'result' => $articles,

@@ -1,9 +1,9 @@
 <template>
     <div class="col-md-8 col-lg-8 col-xs-12">
-        <ol class="breadcrumb">
-            <i class="fa fa-map-marker"></i>&nbsp;&nbsp;
-            <li class="active">首页</li>
-        </ol>
+        <!--<ol class="breadcrumb">-->
+            <!--<i class="fa fa-map-marker"></i>&nbsp;&nbsp;-->
+            <!--<li class="active"> Home</li>-->
+        <!--</ol>-->
         <div class="article-item" v-for="list in lists">
             <div class="article-box box-shadow row">
                 <div class="article-title col-md-12">
@@ -36,8 +36,8 @@
         <div class="loads">
             <nav aria-label="...">
                 <ul class="pager">
-                    <li v-if="pages && current > 1" @click="prev" class="previous"><a href="javascript:;"><span aria-hidden="true">&larr;</span> Older</a></li>
-                    <li v-if="pages && current < pages" @click="next"  class="next"><a href="javascript:;">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                    <li v-if="pages && current > 1" @click="prev" class="previous"><a href="javascript:;"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                    <li v-if="pages && current < pages" @click="next"  class="next"><a href="javascript:;">下一页 <span aria-hidden="true">&rarr;</span></a></li>
                 </ul>
             </nav>
         </div>

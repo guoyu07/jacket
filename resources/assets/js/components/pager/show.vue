@@ -1,9 +1,9 @@
 <template>
     <div class="col-md-8 col-lg-8 col-xs-12">
-        <ol class="breadcrumb">
-            <i class="fa fa-map-marker"></i>&nbsp;&nbsp;
-            <li class="active">首页</li>
-        </ol>
+        <!--<ol class="breadcrumb">-->
+            <!--<i class="fa fa-map-marker"></i>&nbsp;&nbsp;-->
+            <!--<li class="active">首页</li>-->
+        <!--</ol>-->
         <div class="article-show" v-if="article">
             <div class="article-show-title text-center">
                 <h2 style="line-height: 60px">{{article.title}}</h2>
