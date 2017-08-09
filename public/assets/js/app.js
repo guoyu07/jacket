@@ -2198,6 +2198,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus__ = __webpack_require__(86);
 //
 //
 //
@@ -2244,7 +2245,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    created: function created() {
+    mounted: function mounted() {
         var _this = this;
         this.$http.get('/api/menu').then(function (response) {
             _this.menus = response.data.result;
@@ -2276,6 +2277,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
                 _this.$router.push({ name: evt.path, params: { id: evt.param } });
             }
+        },
+        search: function search() {
+            __WEBPACK_IMPORTED_MODULE_0__eventBus__["a" /* default */].$emit('search', 1111);
         }
     }
 });
@@ -2286,6 +2290,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus__ = __webpack_require__(86);
 //
 //
 //
@@ -2346,6 +2351,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'sidebar',
@@ -2359,6 +2365,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     created: function created() {
+        __WEBPACK_IMPORTED_MODULE_0__eventBus__["a" /* default */].$on('search', function (msg) {
+            alert(msg);
+        });
         var _this = this;
         this.$http.get('/api/recommend').then(function (res) {
             _this.recommend = res.data.result;
@@ -2513,6 +2522,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus__ = __webpack_require__(86);
 //
 //
 //
@@ -2558,6 +2568,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'index',
@@ -2570,9 +2581,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
+        __WEBPACK_IMPORTED_MODULE_0__eventBus__["a" /* default */].$on('search', function (msg) {
+            alert(msg);
+        });
         var _this = this;
         this.$http.get('/api/lists').then(function (res) {
-            console.log(res);
             _this.current = res.data.result.current_page;
             _this.pages = res.data.result.last_page;
             _this.lists = res.data.result.data;
@@ -2580,7 +2593,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         change: function change(id) {
-            console.log(id);
             this.$router.push({ name: 'show', params: { id: id } });
         },
         prev: function prev(event) {
@@ -2591,7 +2603,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     page: page
                 }
             }).then(function (res) {
-                console.log(res);
                 _this.current = res.data.result.current_page;
                 _this.pages = res.data.result.last_page;
                 _this.lists = res.data.result.data;
@@ -2605,7 +2616,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     page: page
                 }
             }).then(function (res) {
-                console.log(res);
                 _this.current = res.data.result.current_page;
                 _this.pages = res.data.result.last_page;
                 _this.lists = res.data.result.data;
@@ -33574,7 +33584,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": "javascript:;"
       }
     }, [_vm._v(_vm._s(menu.name))])])
-  })), _vm._v(" "), _vm._m(1)])])])
+  })), _vm._v(" "), _c('div', {
+    staticClass: "navbar-form navbar-right"
+  }, [_vm._m(1), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "submit"
+    },
+    on: {
+      "click": _vm.search
+    }
+  }, [_vm._v("Submit")])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('button', {
     staticClass: "navbar-toggle collapsed",
@@ -33594,8 +33614,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "navbar-form navbar-right"
-  }, [_c('div', {
     staticClass: "form-group"
   }, [_c('input', {
     staticClass: "form-control",
@@ -33603,12 +33621,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "text",
       "placeholder": "Search"
     }
-  })]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "submit"
-    }
-  }, [_vm._v("Submit")])])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -46141,6 +46154,23 @@ module.exports = function(module) {
 __webpack_require__(15);
 module.exports = __webpack_require__(16);
 
+
+/***/ }),
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue___default.a());
 
 /***/ })
 /******/ ]);

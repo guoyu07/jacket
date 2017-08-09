@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default" @click="search">Submit</button>
                 </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-
+    import bus from '../../eventBus'
     export default {
         name: 'nav',
         data () {
@@ -80,6 +80,9 @@
                     _this.$router.push({name:evt.path, params:{id:evt.param}})
                 }
 
+            },
+            search:function () {
+                bus.$emit('search', 1111);
             }
         }
     }

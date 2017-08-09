@@ -44,6 +44,7 @@
     </div>
 </template>
 <script>
+    import bus from '../../eventBus'
     export default{
         name:'index',
         data(){
@@ -54,9 +55,11 @@
             }
         },
         mounted:function () {
+            bus.$on('search', function (msg) {
+                alert(msg)
+            });
             var _this = this
             this.$http.get('/api/lists').then(res => {
-                console.log(res)
                 _this.current = res.data.result.current_page
                 _this.pages = res.data.result.last_page
                 _this.lists = res.data.result.data
@@ -66,7 +69,6 @@
         },
         methods:{
             change:function (id) {
-                console.log(id)
                 this.$router.push({name:'show', params:{id:id}})
             },
             prev:function (event) {
@@ -77,7 +79,6 @@
                         page:page
                     }
                 }).then(res => {
-                    console.log(res)
                     _this.current = res.data.result.current_page
                     _this.pages = res.data.result.last_page
                     _this.lists = res.data.result.data
@@ -93,7 +94,6 @@
                         page:page
                     }
                 }).then(res => {
-                    console.log(res)
                     _this.current = res.data.result.current_page
                     _this.pages = res.data.result.last_page
                     _this.lists = res.data.result.data

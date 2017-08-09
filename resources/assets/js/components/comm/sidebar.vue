@@ -59,6 +59,7 @@
 </template>
 
 <script>
+    import bus from '../../eventBus'
     export default{
         name: 'sidebar',
         data(){
@@ -70,6 +71,9 @@
             }
         },
         created:function(){
+            bus.$on('search', function (msg) {
+                alert(msg)
+            });
             let _this = this;
             this.$http.get('/api/recommend').then(res => {
                 _this.recommend = res.data.result

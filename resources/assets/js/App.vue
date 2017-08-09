@@ -3,7 +3,7 @@
         <my-nav></my-nav>
         <div class="content">
             <div class="container" id="app">
-                <router-view></router-view>
+                <router-view ></router-view>
                 <my-sidebar></my-sidebar>
             </div>
         </div>
