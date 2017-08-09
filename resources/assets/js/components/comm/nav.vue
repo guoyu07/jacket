@@ -43,7 +43,7 @@
                 menus:''
             }
         },
-        created:function(){
+        mounted:function(){
             var _this = this
             this.$http.get('/api/menu').then(function (response) {
                 _this.menus = response.data.result
