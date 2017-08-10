@@ -34,12 +34,14 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-default tags-list">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-tags"></i> 标签
             </div>
             <div class="panel-body">
-                <span class="btn btn-info tag" v-for="tag in tags">{{tag.name}} <span class="badge">{{tag.count}}</span></span>
+                <div class="tags-list">
+                    <span class="btn btn-info tag" v-for="tag in tags">{{tag.name}} <span class="badge">{{tag.count}}</span></span>
+                </div>
             </div>
         </div>
         <div class="panel panel-default friend-link">
