@@ -1,6 +1,6 @@
 <template>
     <div class="col-md-4 col-lg-4 col-xs-12">
-        <div class="panel panel-info">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-thumbs-up"></i> 推荐
             </div>
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-info">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-fire"></i> 人气
             </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-info tags-list">
+        <div class="panel panel-default tags-list">
             <div class="panel-heading">
                 <i class="fa fa-tags"></i> 标签
             </div>
@@ -42,7 +42,7 @@
                 <span class="btn btn-info tag" v-for="tag in tags">{{tag.name}} <span class="badge">{{tag.count}}</span></span>
             </div>
         </div>
-        <div class="panel panel-info friend-link">
+        <div class="panel panel-default friend-link">
             <div class="panel-heading">
                 <i class="fa fa-link"></i> 友情链接
             </div>
@@ -104,25 +104,3 @@
         }
     }
 </script>
-
-<style>
-    .friend-link ul {
-        margin-bottom: 0;
-    }
-
-    .friend-link li:hover {
-        color: #abcdef;
-    }
-
-    .friend-link a {
-        color: #333333;
-    }
-
-    .friend-link a:hover {
-        text-decoration: none;
-    }
-
-    .tags-list .tag {
-        margin: 2px;
-    }
-</style>

@@ -32,16 +32,3 @@
         name:'about',
     }
 </script>
-
-<style>
-    .about-title span{
-        border-bottom: 2px solid #333333;
-    }
-    .about-content{
-        font-size: 20px;
-        text-indent: 40px
-    }
-    .about-img .img-item{
-        padding: 10px;
-    }
-</style>

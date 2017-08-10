@@ -96,35 +96,3 @@
         }
     }
 </script>
-
-<style>
-    .article-show{
-        border:1px solid #bce8f1;
-        border-radius: 3px;
-        padding: 15px;
-        background:#ffffff;
-        margin-bottom: 20px;
-    }
-    .article-show-title span{
-        margin-right: 30px;
-    }
-    .article-relation{
-        border:1px solid #bce8f1;
-        border-radius: 3px;
-        background:#ffffff;
-        padding: 10px;
-    }
-    .article-relation .list-group{
-        margin-bottom: 0;
-    }
-    .article-relation a {
-        color: #333333;
-    }
-
-    .article-relation a:hover{
-        text-decoration: underline;
-    }
-    .article-footer .btn{
-        margin-right: 3px;
-    }
-</style>

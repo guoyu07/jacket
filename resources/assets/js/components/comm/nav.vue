@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -15,7 +15,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li v-for="menu in menus" :class="{'active':menu.active}" v-on:click="change(menu)"><a href="javascript:;">{{menu.name}}</a></li>
+                    <li v-for="menu in menus"  v-on:click="change(menu)"><a href="javascript:;">{{menu.name}}</a></li>
                 </ul>
 
                 <!--<ul class="nav navbar-nav navbar-right">-->
@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default" @click="search">Submit</button>
+                    <button type="submit" class="btn btn-default" @click="search">搜 索</button>
                 </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -87,3 +87,4 @@
         }
     }
 </script>
+

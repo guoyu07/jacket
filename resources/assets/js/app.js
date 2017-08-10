@@ -15,7 +15,7 @@ import axios from 'axios'
 // import $ from 'jquery'
 // import Vuex from 'vuex'
 
-
+import '../css/style.css'
 
 
 
