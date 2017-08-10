@@ -67,9 +67,13 @@ body{
 .panel{
     border: none;
 }
-.panel-heading{
+.panel .panel-heading{
     border-bottom: none;
     background:#F7F7F7;
+}
+.panel  .panel-body{
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /*list*/
