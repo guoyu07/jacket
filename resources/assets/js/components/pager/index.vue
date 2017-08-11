@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-8 col-lg-8 col-xs-12">
+    <div class="col-md-8 col-lg-8 col-xs-12 article">
         <div class="panel panel-default">
             <div class="panel-heading">
                 最新发布

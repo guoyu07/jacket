@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-8 col-lg-8 col-xs-12">
+    <div class="col-md-8 col-lg-8 col-xs-12 article">
         <!--<ol class="breadcrumb">-->
             <!--<i class="fa fa-map-marker"></i>&nbsp;&nbsp;-->
             <!--<li class="active">首页</li>-->

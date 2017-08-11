@@ -98,7 +98,11 @@ body{
     border-bottom: none;
     background:#F7F7F7;
 }
-.panel  .panel-body{
+.article .panel  .panel-body{
+    padding: 0;
+}
+
+.sidebar .panel  .panel-body{
     padding: 10px 0px;
 }
 
@@ -107,6 +111,8 @@ body{
 .list-group .list-group-item{
      border: none;
      cursor: pointer;
+    font-size:15px;
+    line-height:24px
  }
 .list-group .list-group-item:hover{
     background: #F8FCFE;
