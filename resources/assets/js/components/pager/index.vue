@@ -10,8 +10,7 @@
                         <div class="article-header col-md-12">
 
                             <h4 class="article-title">
-                                <span class="title-cate">javascript<i></i></span>
-
+                                <span class="title-cate">{{list.category.name}}</span>
                                 <router-link :to="{name:'show', params:{id:list.id}}">{{list.title}}</router-link>
                             </h4>
                             <p class="article-info">

@@ -4,33 +4,31 @@
             <!--<i class="fa fa-map-marker"></i>&nbsp;&nbsp;-->
             <!--<li class="active">首页</li>-->
         <!--</ol>-->
-        <div class="article-item" v-for="list in lists">
-            <div class="article-box box-shadow row">
-                <div class="article-title col-md-12">
-                    <h2>{{list.title}}</h2>
-                    <p class="article-info">
-                        <span class="time"><i class="fa fa-calendar"></i> {{list.created_at}}</span>
-                        <span class="cate"><i class="fa fa-folder"></i> {{list.category.name}}</span>
-                        <span class="user"><i class="fa fa-user"></i> {{list.user.name}}</span>
-                    </p>
-                </div>
-                <div class="article-desc col-md-12">
-                    <div class="article-cover col-md-4 col-xs-12">
-                        <a href="">
-                            <img class="img-responsive" :src="list.cover" alt="">
-                        </a>
-                    </div>
-                    <div class="article-content col-md-8 col-xs-12">
-                        {{list.desc}}
-                    </div>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                最新发布
+            </div>
+            <div class="panel-body article-list">
+                <h4 v-if="!lists.length" style="text-align: center;line-height: 50px;">啥也没有</h4>
+                <div v-else class="article-item" v-for="list in lists">
+                    <div class="article-box row">
+                        <div class="article-header col-md-12">
 
-                <div class="col-md-12 article-footer">
-                    <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
-                    <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
-                    <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
-                    <span class="label label-default"><i class="fa fa-tag"></i> 1111</span>
-                    <span class="label label-success" style="float: right;cursor: pointer" @click="change(list.id)">详情 ></span>
+                            <h4 class="article-title">
+                                <router-link :to="{name:'show', params:{id:list.id}}">{{list.title}}</router-link>
+                            </h4>
+                            <p class="article-info">
+                                <span class="time"><i class="fa fa-calendar"></i> {{list.created_at}}</span>
+                                <span class="cate"><i class="fa fa-folder"></i> {{list.category.name}}</span>
+                                <span class="user"><i class="fa fa-user"></i> {{list.user.name}}</span>
+                            </p>
+                        </div>
+                        <div class="article-desc col-md-12">
+                            <div class="article-content">
+                                {{list.desc}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
