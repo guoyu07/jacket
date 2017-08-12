@@ -6,7 +6,7 @@
         <!--</ol>-->
         <div class="article-show" v-if="article">
             <div class="article-show-title text-center">
-                <h2 style="line-height: 60px">{{article.title}}</h2>
+                <h3 style="line-height: 60px">{{article.title}}</h3>
                 <p class="article-info">
                     <span class="time"><i class="fa fa-calendar"></i> {{article.created_at}}</span>
                     <span class="cate"><i class="fa fa-folder"></i> {{article.category.name}}</span>
@@ -14,11 +14,11 @@
                     <span class="user"><i class="fa fa-thumbs-up"></i> {{article.votes}}</span>
                 </p>
             </div>
-            <hr style="border-top: 1px solid #bce8f1">
+            <hr style="border-top: 1px solid #f5f5f5">
             <div class="article-content" v-html="article.content">
 
             </div>
-            <hr style="border-top: 1px solid #bce8f1">
+            <hr style="border-top: 1px solid #f5f5f5">
             <p class="article-footer">
                 <span class="btn btn-default btn-xs" v-for="tag in article.tags"><i class="fa fa-tag"></i> {{tag.name}}</span>
                 <span class="btn btn-success btn-sm" style="float: right" @click="vote(article)">

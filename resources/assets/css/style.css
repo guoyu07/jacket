@@ -184,8 +184,9 @@ span.title-cate:after{
     border-bottom: 2px solid #333333;
 }
 .about-content{
-    font-size: 20px;
-    text-indent: 40px
+    font-size: 16px;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .about-img .img-item{
     padding: 10px;
@@ -194,7 +195,7 @@ span.title-cate:after{
 /*show*/
 
 .article-show{
-    border:1px solid #bce8f1;
+    border:1px solid #f5f5f5;
     border-radius: 3px;
     padding: 15px;
     background:#ffffff;
@@ -204,7 +205,7 @@ span.title-cate:after{
     margin-right: 30px;
 }
 .article-relation{
-    border:1px solid #bce8f1;
+    border:1px solid #f5f5f5;
     border-radius: 3px;
     background:#ffffff;
     padding: 10px;
