@@ -11,7 +11,7 @@ body{
     background-size: cover;
 }
 
-.content .container{
+.content,.container{
     padding-left: 0;
     padding-right: 0;
 }

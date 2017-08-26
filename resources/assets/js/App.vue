@@ -6,12 +6,8 @@
             <div class="jumbotron">
                 <h2>echo "Hello World"</h2>
             </div>
-
-
         </div>
         <div class="container" id="app">
-
-
             <router-view ></router-view>
             <my-sidebar></my-sidebar>
         </div>
