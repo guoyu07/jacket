@@ -12556,7 +12556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 id: article.id
             }).then(function (res) {
                 if (res.status) {
-                    article.votes += 1;
+                    article.votes = parseInt(article.votes) + 1;
                 }
             }, function (error) {});
         },
