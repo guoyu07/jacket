@@ -11968,6 +11968,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -12008,6 +12009,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus__ = __webpack_require__(3);
+//
 //
 //
 //
@@ -15023,7 +15025,7 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(45)();
-exports.push([module.i, "*{\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    background:#f0f0f0;\r\n}\r\n\r\n.content{\r\n    margin-top: -75px;\r\n}\r\n\r\n.content .container{\r\n    padding-left: 0;\r\n    padding-right: 0;\r\n}\r\n\r\n/*navbar*/\r\n.navbar-inverse{\r\n    background:  transparent;\r\n    border:none;\r\n    border-radius: 0;\r\n    margin-top: 5px;\r\n}\r\n.navbar-inverse .navbar-nav > li > a{\r\n    font-family:\"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    color: #fff;\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.navbar-inverse .navbar-nav > li > a:hover{\r\n    background:rgba(245, 245, 245, 0.6);\r\n    border-radius: 5px;\r\n    color:#000;\r\n}\r\n\r\n.navbar-inverse .navbar-toggle{\r\n    border-color:transparent;\r\n}\r\n\r\n.navbar-collapse.in {\r\n    overflow-y: auto;\r\n    position: absolute;\r\n    background-color: #4a9eb6;\r\n    z-index:2;\r\n    left: 0;\r\n    right: 0;\r\n    color: #04478e;\r\n    padding: 0 30px;\r\n    box-sizing: border-box;\r\n}\r\n.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{\r\n    border-color: transparent;\r\n}\r\n.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{\r\n    background-color: transparent;\r\n}\r\n\r\n/*jumbotron*/\r\n.jumbotron{\r\n    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502983040&di=8f7f684df3285abba9a70a88bbe91a72&imgtype=jpg&er=1&src=http%3A%2F%2Ftupian.enterdesk.com%2F2012%2F0602%2Fyt%2F18%2F73869f30446c7978916445105b015d97.jpg) no-repeat;\r\n    background-size: cover;\r\n    border-radius: 0 !important;\r\n    margin-bottom: 10px;\r\n    text-align: center;\r\n    padding-top: 100px;\r\n    padding-bottom: 100px;\r\n}\r\n/*siderbar*/\r\n.friend-link ul {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.friend-link li:hover {\r\n    color: #72d0eb;\r\n}\r\n\r\n.friend-link a {\r\n    color: #333333;\r\n}\r\n\r\n.friend-link a:hover {\r\n    text-decoration: none;\r\n}\r\n\r\n.tags-list{\r\n    padding: 0 10px;\r\n}\r\n.tags-list .tag {\r\n    margin-top:2px;\r\n    margin-right:5px;\r\n}\r\n\r\n.panel{\r\n    border: none;\r\n}\r\n.panel .panel-heading{\r\n    border-bottom: none;\r\n    background:#F7F7F7;\r\n}\r\n.article .panel  .panel-body{\r\n    padding: 0;\r\n}\r\n\r\n.sidebar .panel  .panel-body{\r\n    padding: 10px 0px;\r\n}\r\n\r\n/*list*/\r\n\r\n.list-group .list-group-item{\r\n     border: none;\r\n     cursor: pointer;\r\n    font-size:15px;\r\n    line-height:24px\r\n }\r\n.list-group .list-group-item:hover{\r\n    background: #F8FCFE;\r\n}\r\n\r\n.article-list {\r\n    padding: 0;\r\n    border-style: none solid solid solid;\r\n    border-color: #f5f5f5;\r\n    border-width: 1px;\r\n}\r\n\r\n.article-item{\r\n    padding: 0;\r\n    border-bottom: 1px solid #f5f5f5;\r\n}\r\n\r\n.article-item:hover{\r\n    margin-left:-3px;\r\n    background: #F8FCFE;\r\n    border-left: 3px solid #72d0eb;\r\n}\r\n\r\n.article-box {\r\n    padding: 10px 10px 15px 15px;\r\n}\r\n.article-box .article-desc{\r\n    color:#555;\r\n    line-height: 30px;\r\n    font-size: 15px;\r\n}\r\n\r\n.article-header .article-title .title-cate{\r\n    font-size:14px;\r\n    font-weight:normal;\r\n    padding:5px;\r\n    border-radius:0;\r\n    margin-bottom:2px;\r\n    background:#d9534f;\r\n    color:#fff;\r\n    line-height:35px;\r\n    position:relative;\r\n    margin-right:15px;\r\n}\r\n\r\n.article-header .article-title a{\r\n    padding:5px\r\n}\r\n.article-info span {\r\n    margin-right:10px;\r\n    font-weight: 600;\r\n}\r\n\r\nspan.title-cate:after{\r\n    content: \"\";\r\n    width: 0;\r\n    height: 0;\r\n    border-top: 8px solid transparent;\r\n    border-bottom: 8px solid transparent;\r\n    border-left: 8px solid #d9534f;\r\n    position: absolute;\r\n    right: -8px;\r\n    top: 5px;\r\n}\r\n\r\n/*about*/\r\n\r\n.about-title span{\r\n    border-bottom: 2px solid #333333;\r\n}\r\n.about-content{\r\n    font-size: 16px;\r\n    text-indent: 2em;\r\n    line-height: 30px;\r\n}\r\n.about-img .img-item{\r\n    padding: 10px;\r\n}\r\n\r\n/*show*/\r\n\r\n.article-show{\r\n    border:1px solid #f5f5f5;\r\n    border-radius: 3px;\r\n    padding: 15px;\r\n    background:#ffffff;\r\n    margin-bottom: 20px;\r\n}\r\n.article-show-title span{\r\n    margin-right: 30px;\r\n}\r\n.article-relation{\r\n    border:1px solid #f5f5f5;\r\n    border-radius: 3px;\r\n    background:#ffffff;\r\n    padding: 10px;\r\n}\r\n.article-relation .list-group{\r\n    margin-bottom: 0;\r\n}\r\n.article-relation a {\r\n    color: #333333;\r\n}\r\n\r\n.article-relation a:hover{\r\n    text-decoration: underline;\r\n}\r\n.article-footer .btn{\r\n    margin-right: 3px;\r\n}\r\n\r\n/*footer*/\r\n.footer{\r\n    color: #ffffff;\r\n    background: #222222;\r\n    text-align: center;\r\n    line-height: 20px;\r\n    padding: 20px 0 10px 0;\r\n    font-size: 16px;\r\n\r\n}\r\n.footer .saying {\r\n    font-size: 20px;\r\n    font-style: italic;\r\n    font-family: Calibri;\r\n}", ""]);
+exports.push([module.i, "*{\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\nbody{\r\n    background:#f0f0f0;\r\n}\r\n\r\n.content{\r\n    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502983040&di=8f7f684df3285abba9a70a88bbe91a72&imgtype=jpg&er=1&src=http%3A%2F%2Ftupian.enterdesk.com%2F2012%2F0602%2Fyt%2F18%2F73869f30446c7978916445105b015d97.jpg) no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.content .container{\r\n    padding-left: 0;\r\n    padding-right: 0;\r\n}\r\n\r\n/*navbar*/\r\n.navbar-inverse{\r\n    background:  transparent;\r\n    border:none;\r\n    border-radius: 0;\r\n    padding: 5px 20px;\r\n    /*margin-top: 5px;*/\r\n}\r\n.navbar-inverse .navbar-nav > li > a{\r\n    font-family:\"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n    color: #333;\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n}\r\n.navbar-inverse .navbar-nav > li > a:hover{\r\n    background:rgba(245, 245, 245, 0.6);\r\n    border-radius: 5px;\r\n    color:#333;\r\n}\r\n\r\n.navbar-inverse .navbar-toggle{\r\n    border-color:transparent;\r\n}\r\n\r\n/*.navbar-collapse {*/\r\n    /*overflow-y: auto;*/\r\n    /*position: absolute;*/\r\n    /*background-color: #4a9eb6;*/\r\n    /*z-index:2;*/\r\n    /*left: 0;*/\r\n    /*right: 0;*/\r\n    /*color: #04478e;*/\r\n    /*padding: 0 30px;*/\r\n    /*box-sizing: border-box;*/\r\n/*}*/\r\n.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{\r\n    border-color: transparent;\r\n}\r\n.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{\r\n    background-color: transparent;\r\n}\r\n\r\n/*jumbotron*/\r\n.jumbotron{\r\n    border-radius: 0 !important;\r\n    margin-bottom: 10px;\r\n    text-align: center;\r\n    padding-top: 100px;\r\n    padding-bottom: 100px;\r\n    background: transparent;\r\n}\r\n/*siderbar*/\r\n.friend-link ul {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.friend-link li:hover {\r\n    color: #72d0eb;\r\n}\r\n\r\n.friend-link a {\r\n    color: #333333;\r\n}\r\n\r\n.friend-link a:hover {\r\n    text-decoration: none;\r\n}\r\n\r\n.tags-list{\r\n    padding: 0 10px;\r\n}\r\n.tags-list .tag {\r\n    margin-top:2px;\r\n    margin-right:5px;\r\n}\r\n\r\n.panel{\r\n    border: none;\r\n}\r\n.panel .panel-heading{\r\n    border-bottom: none;\r\n    background:#F7F7F7;\r\n}\r\n.article .panel  .panel-body{\r\n    padding: 0;\r\n}\r\n\r\n.sidebar .panel  .panel-body{\r\n    padding: 10px 0px;\r\n}\r\n\r\n/*list*/\r\n\r\n.list-group .list-group-item{\r\n     border: none;\r\n     cursor: pointer;\r\n    font-size:15px;\r\n    line-height:24px\r\n }\r\n.list-group .list-group-item:hover{\r\n    background: #F8FCFE;\r\n}\r\n\r\n.article-list {\r\n    padding: 0;\r\n    border-style: none solid solid solid;\r\n    border-color: #f5f5f5;\r\n    border-width: 1px;\r\n}\r\n\r\n.article-item{\r\n    padding: 0;\r\n    border-bottom: 1px solid #f5f5f5;\r\n}\r\n\r\n.article-item:hover{\r\n    margin-left:-3px;\r\n    background: #F8FCFE;\r\n    border-left: 3px solid #72d0eb;\r\n}\r\n\r\n.article-box {\r\n    padding: 10px 10px 15px 15px;\r\n}\r\n.article-box .article-desc{\r\n    color:#555;\r\n    line-height: 30px;\r\n    font-size: 15px;\r\n}\r\n\r\n.article-header .article-title .title-cate{\r\n    font-size:14px;\r\n    font-weight:normal;\r\n    padding:5px;\r\n    border-radius:0;\r\n    margin-bottom:2px;\r\n    background:#d9534f;\r\n    color:#fff;\r\n    line-height:35px;\r\n    position:relative;\r\n    margin-right:15px;\r\n}\r\n\r\n.article-header .article-title a{\r\n    padding:5px\r\n}\r\n.article-info span {\r\n    margin-right:10px;\r\n    font-weight: 600;\r\n}\r\n\r\nspan.title-cate:after{\r\n    content: \"\";\r\n    width: 0;\r\n    height: 0;\r\n    border-top: 8px solid transparent;\r\n    border-bottom: 8px solid transparent;\r\n    border-left: 8px solid #d9534f;\r\n    position: absolute;\r\n    right: -8px;\r\n    top: 5px;\r\n}\r\n\r\n/*about*/\r\n\r\n.about-title span{\r\n    border-bottom: 2px solid #333333;\r\n}\r\n.about-content{\r\n    font-size: 16px;\r\n    text-indent: 2em;\r\n    line-height: 30px;\r\n}\r\n.about-img .img-item{\r\n    padding: 10px;\r\n}\r\n\r\n/*show*/\r\n\r\n.article-show{\r\n    border:1px solid #f5f5f5;\r\n    border-radius: 3px;\r\n    padding: 15px;\r\n    background:#ffffff;\r\n    margin-bottom: 20px;\r\n}\r\n.article-show-title span{\r\n    margin-right: 30px;\r\n}\r\n.article-relation{\r\n    border:1px solid #f5f5f5;\r\n    border-radius: 3px;\r\n    background:#ffffff;\r\n    padding: 10px;\r\n}\r\n.article-relation .list-group{\r\n    margin-bottom: 0;\r\n}\r\n.article-relation a {\r\n    color: #333333;\r\n}\r\n\r\n.article-relation a:hover{\r\n    text-decoration: underline;\r\n}\r\n.article-footer .btn{\r\n    margin-right: 3px;\r\n}\r\n\r\n/*footer*/\r\n.footer{\r\n    color: #ffffff;\r\n    background: #222222;\r\n    text-align: center;\r\n    line-height: 20px;\r\n    padding: 20px 0 10px 0;\r\n    font-size: 16px;\r\n\r\n}\r\n.footer .saying {\r\n    font-size: 20px;\r\n    font-style: italic;\r\n    font-family: Calibri;\r\n}", ""]);
 
 /***/ }),
 /* 45 */
@@ -43281,14 +43283,14 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "wrapper"
-  }, [_c('my-nav'), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     staticClass: "content"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_c('my-nav'), _vm._v(" "), _vm._m(0)], 1), _vm._v(" "), _c('div', {
     staticClass: "container",
     attrs: {
       "id": "app"
     }
-  }, [_c('router-view'), _vm._v(" "), _c('my-sidebar')], 1)]), _vm._v(" "), _c('my-footer')], 1)
+  }, [_c('router-view'), _vm._v(" "), _c('my-sidebar')], 1), _vm._v(" "), _c('my-footer')], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "jumbotron"
@@ -43613,17 +43615,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "href": "javascript:;"
       }
     }, [_vm._v(_vm._s(menu.name))])])
-  })), _vm._v(" "), _c('div', {
-    staticClass: "navbar-form navbar-right"
-  }, [_vm._m(1), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "submit"
-    },
-    on: {
-      "click": _vm.search
-    }
-  }, [_vm._v("搜 索")])])])])])
+  }))])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('button', {
     staticClass: "navbar-toggle collapsed",
@@ -43640,16 +43632,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon-bar"
   }), _vm._v(" "), _c('span', {
     staticClass: "icon-bar"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('input', {
-    staticClass: "form-control",
-    attrs: {
-      "type": "text",
-      "placeholder": "Search"
-    }
   })])
 }]}
 module.exports.render._withStripped = true

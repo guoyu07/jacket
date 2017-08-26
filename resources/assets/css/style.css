@@ -7,7 +7,8 @@ body{
 }
 
 .content{
-    margin-top: -75px;
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502983040&di=8f7f684df3285abba9a70a88bbe91a72&imgtype=jpg&er=1&src=http%3A%2F%2Ftupian.enterdesk.com%2F2012%2F0602%2Fyt%2F18%2F73869f30446c7978916445105b015d97.jpg) no-repeat;
+    background-size: cover;
 }
 
 .content .container{
@@ -20,35 +21,36 @@ body{
     background:  transparent;
     border:none;
     border-radius: 0;
-    margin-top: 5px;
+    padding: 5px 20px;
+    /*margin-top: 5px;*/
 }
 .navbar-inverse .navbar-nav > li > a{
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #fff;
+    color: #333;
     font-size: 16px;
     font-weight: bold;
 }
 .navbar-inverse .navbar-nav > li > a:hover{
     background:rgba(245, 245, 245, 0.6);
     border-radius: 5px;
-    color:#000;
+    color:#333;
 }
 
 .navbar-inverse .navbar-toggle{
     border-color:transparent;
 }
 
-.navbar-collapse.in {
-    overflow-y: auto;
-    position: absolute;
-    background-color: #4a9eb6;
-    z-index:2;
-    left: 0;
-    right: 0;
-    color: #04478e;
-    padding: 0 30px;
-    box-sizing: border-box;
-}
+/*.navbar-collapse {*/
+    /*overflow-y: auto;*/
+    /*position: absolute;*/
+    /*background-color: #4a9eb6;*/
+    /*z-index:2;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*color: #04478e;*/
+    /*padding: 0 30px;*/
+    /*box-sizing: border-box;*/
+/*}*/
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
     border-color: transparent;
 }
@@ -58,13 +60,12 @@ body{
 
 /*jumbotron*/
 .jumbotron{
-    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502983040&di=8f7f684df3285abba9a70a88bbe91a72&imgtype=jpg&er=1&src=http%3A%2F%2Ftupian.enterdesk.com%2F2012%2F0602%2Fyt%2F18%2F73869f30446c7978916445105b015d97.jpg) no-repeat;
-    background-size: cover;
     border-radius: 0 !important;
     margin-bottom: 10px;
     text-align: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    background: transparent;
 }
 /*siderbar*/
 .friend-link ul {
