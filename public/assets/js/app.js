@@ -12265,7 +12265,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             lists: [],
             current: 1,
-            pages: null
+            pages: null,
+            category: ''
         };
     },
 
@@ -12318,6 +12319,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.current = res.data.result.current_page;
                 _this.pages = res.data.result.last_page;
                 _this.lists = res.data.result.data;
+                _this.category = res.data.category;
             }, function (error) {});
         }
     }
@@ -43180,7 +43182,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("\n            最新发布\n        ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n            " + _vm._s(_vm.category) + "\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "panel-body article-list"
   }, [(!_vm.lists.length) ? _c('h4', {
     staticStyle: {

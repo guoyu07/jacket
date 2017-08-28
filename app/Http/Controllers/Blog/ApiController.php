@@ -20,7 +20,7 @@ class ApiController extends Controller
 {
     public function menu()
     {
-        $menus = Menus::select(['id', 'name', 'type', 'path', 'param', 'active'])->get();
+        $menus = Menus::select(['id', 'name', 'type', 'path', 'param', 'active'])->orderBy('sort')->get();
         return response()->json([
             'status' => true,
             'result' => $menus,
@@ -39,6 +39,7 @@ class ApiController extends Controller
         return response()->json([
             'status' => true,
             'result' => $articles,
+            'category' => isset($category) ? $category->name : '',
         ]);
     }
 
