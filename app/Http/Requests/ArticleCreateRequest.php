@@ -28,7 +28,7 @@ class ArticleCreateRequest extends FormRequest
             'category_id' => 'required',
             'desc'  => 'required',
             'tags' => 'required',
-            'cover' => 'required',
+//            'cover' => 'required',
             'content' => 'required',
         ];
     }
@@ -40,7 +40,7 @@ class ArticleCreateRequest extends FormRequest
             'category_id.required' => '请选择分类',
             'desc.required' => '描述必须填写',
             'tags.required' => '标签必须填写',
-            'cover.required' => '封面图必须上传',
+//            'cover.required' => '封面图必须上传',
             'content.required' => '内容必须填写',
         ];
     }
