@@ -45,7 +45,9 @@ class ArticleController extends Controller
     public function store(ArticleCreateRequest $request)
     {
         $data = $request->articleData();
-        $data['cover'] = $this->service->upload($request->file('cover'));
+        if ($request->get('cover')) {
+            $data['cover'] = $this->service->upload($request->file('cover'));
+        }
         $article = Article::create($data);
         $tags = $request->get('tags');
         $tagsArr = explode(',', $tags);

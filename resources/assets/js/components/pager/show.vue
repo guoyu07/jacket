@@ -72,7 +72,7 @@
                     id:article.id
                 }).then(res => {
                     if (res.status) {
-                        article.votes += 1;
+                        article.votes = parseInt(article.votes) + 1;
                     }
 
                 }, error => {

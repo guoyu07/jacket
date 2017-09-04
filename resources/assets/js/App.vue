@@ -1,18 +1,15 @@
 <template>
     <div class="wrapper">
-        <my-nav></my-nav>
-        <div class="content">
 
+        <div class="content">
+            <my-nav></my-nav>
             <div class="jumbotron">
                 <h2>echo "Hello World"</h2>
             </div>
-
-            <div class="container" id="app">
-
-
-                <router-view ></router-view>
-                <my-sidebar></my-sidebar>
-            </div>
+        </div>
+        <div class="container" id="app">
+            <router-view ></router-view>
+            <my-sidebar></my-sidebar>
         </div>
         <my-footer></my-footer>
     </div>

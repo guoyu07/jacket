@@ -6,7 +6,7 @@
         <!--</ol>-->
         <div class="panel panel-default">
             <div class="panel-heading">
-                最新发布
+                {{category}}
             </div>
             <div class="panel-body article-list">
                 <h4 v-if="!lists.length" style="text-align: center;line-height: 50px;">啥也没有</h4>
@@ -55,6 +55,7 @@
                 lists:[],
                 current:1,
                 pages:null,
+                category:'',
             }
         },
         watch: {
@@ -110,6 +111,7 @@
                     _this.current = res.data.result.current_page
                     _this.pages = res.data.result.last_page
                     _this.lists = res.data.result.data
+                    _this.category = res.data.category
                 }, error => {
 
                 })

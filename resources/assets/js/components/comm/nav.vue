@@ -17,17 +17,18 @@
                 <ul class="nav navbar-nav">
                     <li v-for="menu in menus"  v-on:click="change(menu)"><a href="javascript:;">{{menu.name}}</a></li>
                 </ul>
-
                 <!--<ul class="nav navbar-nav navbar-right">-->
                     <!--<li><a href="#">登录</a></li>-->
                     <!--<li><a href="#">注册</a></li>-->
                 <!--</ul>-->
-                <div class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default" @click="search">搜 索</button>
-                </div>
+                <!--<div class="navbar-form navbar-right">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control" placeholder="Search">-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-default" @click="search">搜 索</button>-->
+                <!--</div>-->
+
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

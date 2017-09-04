@@ -18,7 +18,7 @@ class Artilce extends Migration
             $table->string('title', 128);
             $table->unsignedInteger('user_id');
             $table->string('desc',255);
-            $table->string('cover', 128);
+            $table->string('cover', 128)->default('');
             $table->unsignedInteger('category_id');
             $table->unsignedTinyInteger('is_recommend')->default(0);
             $table->text('content');

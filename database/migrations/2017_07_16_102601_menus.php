@@ -18,7 +18,7 @@ class Menus extends Migration
             $table->string('name', 60);
             $table->string('type', 60);
             $table->string('path', 60);
-            $table->unsignedInteger('param');
+            $table->unsignedInteger('param')->default(0);
             $table->boolean('active');
             $table->unsignedTinyInteger('sort');
             $table->timestamps();
